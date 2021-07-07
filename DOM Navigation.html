@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 10px auto;
+        }
+        .brand{
+
+        }
+        .btn{
+
+        }
+        .nav{
+
+          
+        }
+        .nav li{
+            display: inline;
+        }
+        .nav-items{
+            
+
+        }
+        ul{
+            margin: 0%;
+            padding: 0%;
+        }
+        
+        button{
+            border: none;
+        }
+        .btn{
+            display: none   ;
+        }
+        @media screen and (max-width:480px) {
+            .btn{
+                display: block;
+                border: 2px solid orangered;
+            }
+            .nav li{
+                display: block;
+               
+            }
+            .box{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top: 10px ;
+            flex-wrap: wrap;
+        }
+        .nav{
+            width: 100%;
+            margin-top: 10px;
+            display: none;
+           
+        }
+        .ShowList{
+            display: block;
+        }
+           
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+    <div class="brand"><button>MMSIT</button></div>
+    <button class="btn" id="btn">M</button>
+    <div class="nav" >
+        <ul>
+            <li><a href="#" class="nav-items">Home</a></li>
+            <li><a href="#" class="nav-items">About</a></li>
+            <li><a href="#" class="nav-items">Services</a></li>
+            <li><a href="#" class="nav-items">Gallery</a></li>
+            <li><a href="#" class="nav-items">Contact Us</a></li>
+
+        </ul>
+    </div>
+    </div>
+</body>
+<script>
+    let list=document.querySelector(".nav");
+   document.getElementById("btn").onclick=function(){
+       list.classList.toggle("ShowList");
+
+   }
+</script>
+</html>

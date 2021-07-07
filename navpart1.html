@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,900;1,300&display=swap');
+        :root{
+            --primary:#f3f169;
+            --dark:#482ff7;
+            --light:#46c3db;
+            --text:#e2f3f5;
+
+        }
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            font-family: 'Merriweather', serif;
+        }
+        .box{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+            width: 100%;
+            background-color: var(--text);
+            height: 65px;
+}
+        
+        .brand{
+            font-size: 15px;
+            margin-left: 10px;
+           
+
+        }
+        h2{
+            color: var(--dark);
+        }
+        .btn{
+
+        }
+        .M{
+            display: none;
+           
+
+        }
+        .nav{
+            
+         
+        }
+        ul{
+            display: flex;
+            justify-content: flex-end;
+            flex-grow: 1;
+            align-items: center;
+        }
+        .nav li{
+            list-style-type: none;
+            display: inline;
+            margin: 10px;
+            padding: 10px;
+            background-color: var(--dark);
+            border-radius: 5px;
+            
+            
+           
+           
+            
+        }
+        .nav-items{
+            text-decoration: none;
+            color: var(--text);
+            font-size: 12px;
+
+        }
+        .nav li:hover{
+            background-color: var(--light);
+            transition: 0.5s;
+            box-shadow:1px 1px var(--dark); 
+        }
+        
+        @media screen and (max-width:480px){
+            .M{
+                display: block;
+                width: 40px;
+                height: 30px;
+                border-radius: 10px;
+                border: 2px solid var(--dark);
+                margin: 10px;
+                color:var(--text);
+                background-color: var(--light);
+            }
+            .box{
+                width: 100%;
+                padding: 0%;
+                margin: 0%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+              
+            }
+           .nav{
+               display: none   ;
+               margin-top: 20px;
+              
+               
+               padding: 0%;
+               width: 90%;
+               position: absolute;
+                top: 50px;
+}
+         
+           
+           ul{
+               padding: 0%;
+               display: block;
+              
+               
+           }
+           .nav li{
+            background-color: var(--dark);
+            width: 100%;
+           display: block;
+            
+           border-radius: 2px;
+           margin: 5px;
+            height: 30px;
+         
+           }
+           .nav-items{
+            display: block;
+            width: 100%;
+        
+            color: var(--text);
+        
+            font-size: 10px;
+              
+           }
+           .showList{
+               display: block;
+           }
+           .nav li:hover{
+            background-color: var(--light);
+            transition: 0.5s;
+            box-shadow:1px 1px var(--dark);
+        }
+           
+        }
+       
+
+        
+       
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="brand"><h2>MMSIT</h2></div>
+        <div class="btn">
+            <button class="M">M</button>
+        </div>
+        <div class="nav" >
+           <ul>
+              <li><a href="#" class="nav-items">Home</a></li>
+              <li><a href="#" class="nav-items">Services</a></li>
+              <li><a href="#" class="nav-items">About</a></li>
+              <li><a href="#" class="nav-items">Gallary</a></li>
+              <li><a href="#" class="nav-items">Contact Us</a></li>
+
+
+           </ul>
+        </div>
+    </div>
+</body>
+<script>
+   document.querySelector(".btn").onclick=function(){
+       let nav=document.querySelector(".nav");
+       nav.classList.toggle("showList");
+   }
+</script>
+</html>

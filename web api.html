@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="file" id="upload" multiple>
+  <ul id="list">
+    
+  </ul>
+  <form action="" id="form">
+    <input type="text" name="uname"><br>
+    <input type="text " name="paaword"><br>
+    <button>Register</button>
+  </form>
+</body>
+<script>
+
+  let a= new Audio("music.mp3")
+  document.getElementById("upload").addEventListener("change",function(){
+    console.log(this.files)
+    let File=this.files
+    for(x of File){
+      let Lst=document.getElementById("list")
+      Lst.innerHTML+=`<li>${x.name}</li>`
+    }
+  })
+  document.getElementById("form").addEventListener("submit",function(e){
+    console.log("You Submitted")
+ e.preventDefault()
+ let y=document.getElementById("form")
+ z=new FormData(y);
+ for(let pair of z.entries()) {
+   console.log(pair[0]+ ', '+ pair[1]);
+}
+  })
+
+</script>
+</html>

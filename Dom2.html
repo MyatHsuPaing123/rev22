@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Myat HSu Paing</p>
+
+    <p id="one">Hello Testing</p>
+    
+</body>
+<script>
+    let body=document.body;
+    let p=document.createElement("p");
+    let t=document.createTextNode("This is Text");
+
+let text=document.getElementById("one");
+    p.appendChild(t)
+    body.appendChild(p)
+    body.insertBefore(p,text)
+    body.removeChild(text)
+    
+</script>
+</html>

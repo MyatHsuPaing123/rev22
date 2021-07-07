@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        #upload{
+               display: none;
+        }
+        #uploader{
+            height: 110px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #d5d5d5;
+            width: 900px;
+            margin: 20px auto;
+        }
+        #uploader img{
+               width: 100px;
+
+        }
+        .gallery{
+            width: 900px;
+    columns: 3 900px;
+    margin: 20px auto;
+            
+        }
+
+        
+        .gallery-img{
+            width: 250px;
+             margin: 20px;
+            border-radius: 20px;
+           
+        }
+        #preview{
+
+        }
+    </style>
+</head>
+<body>
+    <input type="file" id="upload" multiple>
+    <div id="uploader">
+        <img src="upload.png" alt="">
+    </div>
+    <div class="gallery">
+        
+    </div>
+</body>
+<script>
+    let upload=document.getElementById("upload")
+  let gallery=document.querySelector(".gallery")
+
+    function addToGallery(src){
+        let img=new Image();
+        img.src=src
+        img.classList="gallery-img";
+        gallery.appendChild(img)
+        
+    }
+  
+  upload.addEventListener("change",function(){
+      console.log(upload.files)
+       let File=upload.files
+       let preview=document.getElementById("preview")
+       for(let i=0;i<File.length;i++){
+              const reader = new FileReader();
+      reader.addEventListener("load", function () {
+    // preview.src=reader.result
+     addToGallery(reader.result)
+  });
+  reader.readAsDataURL(File[i]);
+       }
+
+  })
+
+
+  let Uploader=document.getElementById("uploader")
+  Uploader.addEventListener("click",function(){
+      upload.click()
+      console.log("u clicked")
+  })
+</script>
+</html>

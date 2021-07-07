@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .news{
+             width: 80%;
+            column-count: 3;
+            column-gap: 5px;
+            margin: 100px auto;
+            
+            background-color: rgb(205, 174, 206);
+        }
+        .card{
+           width: 100%;
+           border: 1px solid #d5d5d5;
+           margin: 10px auto;
+           border-radius: 20px;
+          
+            
+        }
+        .card-image{
+             width: 100%;
+        }
+        .Title{
+              
+        }
+        .name{
+
+        }
+        .para{
+
+        }
+    </style>
+</head>
+<body>
+    <div class="news">
+
+    </div>
+</body>
+<script>
+  fetch('https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=be41aff3934441a081a6cc19cb3a5c7c')
+  .then(response => response.json())
+  .then(data => {
+  console.log(data)
+  let news=document.querySelector(".news")
+    let art=data.articles;
+    art.map(function(el,index){
+   
+   news.innerHTML+=` <div class="card">
+            <img src="${el.urlToImage}" alt="" class="card-image">
+            <h4 class="Title">${el.description}</h4>
+            <span class="name">${el.author}</span>
+            <p class="para">${el.content}</p>
+            <a href="${el.url}">Read More</a>
+
+        </div>`;
+})
+
+});
+      
+  
+</script>
+</html>

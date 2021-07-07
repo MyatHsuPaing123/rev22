@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #one{
+        width: 200px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        margin-top: 100px;
+    }
+    #clock{
+        display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 250px;
+    font-size: 20px;
+    }
+    #btn{
+        display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 170px;
+    left: 690px;
+    border-radius: 5px;
+    background-color: blueviolet;
+    color: white;
+    }
+    </style>
+</head>
+<body>
+    <h2>This is setTimeout & SetInterval</h2>
+    <img src="original.jpg" alt="" id="one">
+    <button id="btn" onclick="Change()  ">Stop</button>
+
+<p id="clock"></p>
+
+</body>
+<script>
+//     let test=function(){
+//         console.log("This  is set Timeout")
+//     }
+// test();
+//  let run=   setTimeout(test,5000)
+//  let test2=function(){
+//      console.log("this is Interval"+Math.random())
+
+//  }
+//  let x=setInterval(test2,3000)
+   
+ let change=function(){
+     let pic=document.getElementById("one")
+     pic.src="mm.png"
+ }
+ setTimeout(change,5000)
+
+ let test=function(){
+     let d=new Date()
+     let clock= document.getElementById("clock")
+     clock.innerHTML=`${d.getHours()} :${d.getMinutes()} :${d.getSeconds()}`
+ }
+ let run=setInterval(test,1000)
+function Change(){
+     clearInterval(run)
+ }
+</script>
+</html>

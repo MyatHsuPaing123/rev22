@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let arr=["Banana","Apple","Orange","Mango","Lemon"];
+    let numArr=[15,14,35,-8,100,45,67,3];
+    let apiData=[
+        {id:1,name:"MgMg",age:14,room:"a",donate:350},
+        {id:2,name:"Kyaw Kyaw",age:14,room:"a",donate:100},
+        {id:3,name:"KOKo",age:14,room:"b",donate:200},
+        {id:4,name:"Mya Mya",age:14,room:"a",donate:150},
+        {id:5,name:"Hla Hla",age:14,room:"c",donate:700},
+
+    ];
+let one=arr;
+let two=arr.map(function(el,index){
+    return el+"aaa"
+})
+let three=apiData.map(function(el,index){
+    return {room:el.room,name:el.name}
+})
+let four=apiData.map(el=>el.room)
+let five=arr.filter(function(el,index){
+    if(el.length>5){
+        return el
+    }else{
+
+    }
+})
+let six=apiData.filter(el=>el.room==="a").map(el=>el.donate).reduce((x,y)=>x+y)
+let seven=apiData.filter(el=>el.donate===200).map(el=>el.name)
+</script>
+</html>

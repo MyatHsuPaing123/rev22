@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Event Delegation</h2>
+    <button onclick="showList()">Show List</button>
+    <ul class="output">
+
+    </ul>
+</body>
+<script>
+    let output=document.querySelector(".output")
+    let arr=["apple","watermelon","banana","mango","orange","lemon","strawberry"]
+    
+    function addLi(x){
+        let li=document.createElement("li")
+        let content=document.createTextNode(x)
+        li.appendChild(content)   
+        output.appendChild(li)
+        // <li>ghbjg</li>
+    }
+
+//  let li=document.querySelectorAll("li")
+//  li.forEach(function(el){
+//      el.addEventListener("click",function(){
+//          console.log(el.innerHTML)
+//      })
+//  })
+ function  showList(){
+    arr.map(function(el){
+          addLi(el)
+
+    })
+ }
+ output.addEventListener("click",function(el){
+     let current=el.target;
+     console.log(current.innerHTML)
+ })
+</script>
+</html>

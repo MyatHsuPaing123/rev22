@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let myself={
+        name:"Myat Hsu Paing",
+        age:18,
+        introduction:function(){
+            return ` My name is ${this.name} and ${this.age}years old`
+        }
+    }
+    class ME{
+        name="Myat Hsu Paing";
+        age=18;
+      introduction(){
+        return ` My name is ${this.name} and ${this.age}years old`
+      }
+    //   access modifier
+    // private internal usage;
+      #bf="Aidan";
+      showbf(){
+        return  `${this.#bf}is my boyfriend`
+      }
+
+    }
+    // Magic Method
+   class Reg{
+       constructor(name,age){
+           this.name=name;
+           this.age=age;
+           
+       }
+       get bdy(){
+           let current=2021;
+           return current-this.age
+       }
+   }
+
+
+</script>
+</html>

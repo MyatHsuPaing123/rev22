@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="text">
+    <ul id="list">    
+
+
+    </ul>
+</body>
+<script>
+    let text=document.getElementById("text")
+    let List=document.getElementById("list")
+    function AddList(x){
+        let li=document.createElement("li")
+        let note=document.createTextNode(x)
+        li.appendChild(note)
+        List.appendChild(li)
+        // 
+        let btn=document.createElement("button")
+        let del=document.createTextNode("Delete")
+        btn.appendChild(del)
+        li.appendChild(btn)
+        List.appendChild(li)
+        
+        // 
+        let btn2=document.createElement("button")
+        let edit=document.createTextNode("Edit")
+        btn2.appendChild(edit)
+        li.appendChild(btn2)
+        List.appendChild(li)
+        // 
+        btn.addEventListener("click",function(){
+     List.removeChild(li)
+      .removeChild(btn)
+        })
+        // 
+        btn2.addEventListener("click",function(){
+        
+  let rewrite= document.createTextNode(prompt(""))
+  li.replaceChild(rewrite,note)
+ 
+   
+           
+   
+
+        })
+        
+
+    }
+    text.addEventListener("keyup",function(e){
+        if(e.keyCode===13){
+            let x=text.value;
+        AddList(x)
+        
+        text.value=""
+       
+        };
+    
+    })
+    
+</script>
+</html>
